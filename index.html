@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yucaritas: Snack Saludable</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             color: #333;
             margin: 0;
             padding: 0;
             background-color: #fafafa;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -26,6 +28,7 @@
             margin: 0;
             font-size: 2.5em;
             text-transform: uppercase;
+            display: inline-block;
         }
 
         header nav ul {
@@ -46,24 +49,95 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcc99;
+        }
+
+        header img {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            height: 80px;
+            width: auto;
         }
 
         .hero {
             background-image: url('images/yucaritas_imagen1.jpg'); /* Ruta relativa */
             background-size: cover;
             background-position: center;
-            height: 300px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+            transform: translateZ(-1px) scale(1.5);
         }
 
         .container {
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2em;
+            color: #8e5636;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #8e5636;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff8c00;
         }
 
         footer {
@@ -78,6 +152,7 @@
 <body>
     <header>
         <h1>Yucaritas</h1>
+        <img src="images/logo.jpeg" alt="Yucaritas Logo">
         <p>El Snack Saludable que te Conecta con Perú</p>
         <nav>
             <ul>
@@ -95,7 +170,8 @@
 
     <div class="container">
         <h2>Bienvenido a Yucaritas</h2>
-        <p>Descubre el snack que ha conquistado los paladares más exigentes. Yucaritas es un snack de yuca frita con un toque picante, inspirado en las tradiciones culinarias peruanas. Ideal para aquellos que buscan calidad, autenticidad y un sabor inigualable.</p>
+        <p>Descubre el snack que ha conquistado los paladares más exigentes. <strong>Yucaritas</strong> es un snack de yuca frita con un toque picante, inspirado en las tradiciones culinarias peruanas. Ideal para aquellos que buscan calidad, autenticidad, y un sabor inigualable.</p>
+        <a href="productos.html" class="cta-button">Descubre nuestros productos</a>
     </div>
 
     <footer>
@@ -103,3 +179,4 @@
     </footer>
 </body>
 </html>
+
