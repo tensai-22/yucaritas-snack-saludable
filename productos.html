@@ -255,21 +255,24 @@
     <script>
         function calculatePrice() {
             const unitPrice = 4.50; // Precio unitario en USD
+            const weightPerUnit = 100; // Peso por unidad en gramos
             const quantity = parseInt(document.getElementById('quantity').value);
             let discount = 0;
 
-            if (quantity >= 10) {
-                discount = 0.10; // 10% de descuento para 10 o más unidades
+            // Descuentos de lanzamiento por volumen (Estrategia Push)
+            if (quantity >= 20) {
+                discount = 0.20; // 20% de descuento para 20 o más unidades
+            } else if (quantity >= 10) {
+                discount = 0.15; // 15% de descuento para 10 o más unidades
             } else if (quantity >= 5) {
-                discount = 0.05; // 5% de descuento para 5 o más unidades
+                discount = 0.10; // 10% de descuento para 5 o más unidades
             }
 
+            const totalWeightKg = (weightPerUnit * quantity) / 1000; // Peso total en kg
             const totalPrice = unitPrice * quantity * (1 - discount);
-            document.getElementById('price-output').textContent = `Precio total: $${totalPrice.toFixed(2)}`;
+            document.getElementById('price-output').textContent = `Precio total por ${totalWeightKg.toFixed(2)} kg: $${totalPrice.toFixed(2)} (Descuento aplicado: ${(discount * 100).toFixed(0)}%)`;
         }
     </script>
 </body>
 </html>
-
-
 
