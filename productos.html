@@ -251,6 +251,25 @@
         <p>&copy; 2024 Yucaritas Perú. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- JavaScript -->
+    <script>
+        function calculatePrice() {
+            const unitPrice = 4.50; // Precio unitario en USD
+            const quantity = parseInt(document.getElementById('quantity').value);
+            let discount = 0;
+
+            if (quantity >= 10) {
+                discount = 0.10; // 10% de descuento para 10 o más unidades
+            } else if (quantity >= 5) {
+                discount = 0.05; // 5% de descuento para 5 o más unidades
+            }
+
+            const totalPrice = unitPrice * quantity * (1 - discount);
+            document.getElementById('price-output').textContent = `Precio total: $${totalPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
 
 
 
