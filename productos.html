@@ -56,18 +56,6 @@
             font-weight: bold;
         }
 
-        .hero {
-            background-image: url('images/yucaritas_imagen1.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
         .container {
             padding: 20px;
             max-width: 1200px;
@@ -84,24 +72,24 @@
             text-align: justify;
         }
 
-        .comparative-table {
+        .comparative-table, .discount-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
 
-        .comparative-table th, .comparative-table td {
+        .comparative-table th, .comparative-table td, .discount-table th, .discount-table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
 
-        .comparative-table th {
+        .comparative-table th, .discount-table th {
             background-color: #8e5636;
             color: white;
         }
 
-        .comparative-table td {
+        .comparative-table td, .discount-table td {
             background-color: #f4f4f4;
         }
 
@@ -135,7 +123,7 @@
         .interactive-section input {
             padding: 5px;
             font-size: 1em;
-            width: 50px;
+            width: 100px;
             text-align: center;
         }
 
@@ -195,37 +183,69 @@
 
     <div class="container">
         <h2>Conoce Nuestros Productos</h2>
-        <p><span class="highlight-text">Yucaritas</span> no es solo un snack, es una travesía sensorial a través de los <span class="highlight-text">sabores</span> más emblemáticos de la <span class="highlight-text">gastronomía peruana</span>. Elaborado con la más fina yuca, cuidadosamente frita hasta alcanzar una crujiente perfección, cada bocado de <span class="highlight-text">Yucaritas</span> está impregnado con <span class="highlight-text">especias tradicionales peruanas</span> que evocan la calidez y el espíritu vibrante de las cocinas andinas. Este exquisito manjar lleva consigo la <span class="highlight-text">riqueza cultural</span> de un país donde la tierra, el sol y la tradición se unen para crear algo verdaderamente especial. Es más que un simple aperitivo; es una invitación a descubrir y disfrutar la esencia auténtica del Perú, presentada en un formato moderno y accesible para quienes buscan experimentar nuevos horizontes gastronómicos. Para quienes desconocen la yuca, este tubérculo nativo sudamericano ha alimentado a civilizaciones durante milenios, y ahora, con <span class="highlight-text">Yucaritas</span>, te invitamos a sumergirte en una experiencia que es a la vez <span class="highlight-text">innovadora</span> y profundamente arraigada en la tradición.</p>
+        <p><span class="highlight-text">Yucaritas</span> no es solo un snack, es una travesía sensorial a través de los <span class="highlight-text">sabores</span> más emblemáticos de la <span class="highlight-text">gastronomía peruana</span>. Elaborado con la más fina yuca, cuidadosamente frita hasta alcanzar una crujiente perfección, cada bocado de <span class="highlight-text">Yucaritas</span> está impregnado con <span class="highlight-text">especias tradicionales peruanas</span> que evocan la calidez y el espíritu vibrante de las cocinas andinas.</p>
 
-        <h3>Comparativa de Precios</h3>
+        <h3>Comparativa de Precios por Toneladas</h3>
         <table class="comparative-table">
             <thead>
                 <tr>
                     <th>Producto</th>
-                    <th>Peso Neto</th>
+                    <th>Peso Neto (toneladas)</th>
                     <th>Precio en Miami (USD)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Yucaritas</td>
-                    <td>100g</td>
-                    <td class="highlight">$4.50</td>
+                    <td>1</td> <!-- 1 tonelada completa -->
+                    <td class="highlight">$45,000.00</td> <!-- Precio ajustado a tonelada -->
                 </tr>
                 <tr>
                     <td>Platanitos (Marca Competidora)</td>
-                    <td>85g</td>
-                    <td>$5.00</td>
+                    <td>1</td> <!-- 1 tonelada -->
+                    <td>$50,000.00</td> <!-- Precio ajustado a tonelada -->
                 </tr>
                 <tr>
                     <td>Papitas Fritas (Marca Competidora)</td>
-                    <td>150g</td>
-                    <td>$6.50</td>
+                    <td>1</td> <!-- 1 tonelada -->
+                    <td>$65,000.00</td> <!-- Precio ajustado a tonelada -->
                 </tr>
                 <tr>
                     <td>Snacks de Yuca (Marca Competidora)</td>
-                    <td>90g</td>
-                    <td>$4.75</td>
+                    <td>1</td> <!-- 1 tonelada -->
+                    <td>$47,500.00</td> <!-- Precio ajustado a tonelada -->
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tabla de Descuentos por Volumen</h3>
+        <table class="discount-table">
+            <thead>
+                <tr>
+                    <th>Cantidad (Toneladas)</th>
+                    <th>Descuento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 3 toneladas</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td>3 - 5 toneladas</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>5 - 7 toneladas</td>
+                    <td>12%</td>
+                </tr>
+                <tr>
+                    <td>7 - 10 toneladas</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>Más de 10 toneladas</td>
+                    <td>20%</td>
                 </tr>
             </tbody>
         </table>
@@ -233,8 +253,8 @@
         <!-- Interactive Price Section -->
         <div class="interactive-section">
             <h3>Calcula tu Precio con Descuento por Volumen</h3>
-            <label for="quantity">Cantidad (unidades):</label>
-            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            <label for="tonnage">Peso (en toneladas):</label>
+            <input type="number" id="tonnage" name="tonnage" min="1" value="1" step="0.01">
             <button onclick="calculatePrice()">Calcular Precio</button>
             <div class="price-output" id="price-output"></div>
         </div>
@@ -254,25 +274,26 @@
     <!-- JavaScript -->
     <script>
         function calculatePrice() {
-            const unitPrice = 4.50; // Precio unitario en USD
-            const weightPerUnit = 100; // Peso por unidad en gramos
-            const quantity = parseInt(document.getElementById('quantity').value);
+            const unitPricePerTon = 45000; // Precio por tonelada en USD
+            const tonnage = parseFloat(document.getElementById('tonnage').value);
             let discount = 0;
 
-            // Descuentos de lanzamiento por volumen (Estrategia Push)
-            if (quantity >= 20) {
-                discount = 0.20; // 20% de descuento para 20 o más unidades
-            } else if (quantity >= 10) {
-                discount = 0.15; // 15% de descuento para 10 o más unidades
-            } else if (quantity >= 5) {
-                discount = 0.10; // 10% de descuento para 5 o más unidades
+            // Aplicar descuento basado en las toneladas
+            if (tonnage > 10) {
+                discount = 0.20; // 20% de descuento para más de 10 toneladas
+            } else if (tonnage > 7) {
+                discount = 0.15; // 15% de descuento para 7 a 10 toneladas
+            } else if (tonnage > 5) {
+                discount = 0.12; // 12% de descuento para 5 a 7 toneladas
+            } else if (tonnage > 3) {
+                discount = 0.10; // 10% de descuento para 3 a 5 toneladas
+            } else if (tonnage > 1) {
+                discount = 0.05; // 5% de descuento para 1 a 3 toneladas
             }
 
-            const totalWeightKg = (weightPerUnit * quantity) / 1000; // Peso total en kg
-            const totalPrice = unitPrice * quantity * (1 - discount);
-            document.getElementById('price-output').textContent = `Precio total por ${totalWeightKg.toFixed(2)} kg: $${totalPrice.toFixed(2)} (Descuento aplicado: ${(discount * 100).toFixed(0)}%)`;
+            const totalPrice = unitPricePerTon * tonnage * (1 - discount);
+            document.getElementById('price-output').textContent = `Precio total para ${tonnage} toneladas: $${totalPrice.toFixed(2)} (Descuento aplicado: ${(discount * 100).toFixed(0)}%)`;
         }
     </script>
 </body>
 </html>
-
